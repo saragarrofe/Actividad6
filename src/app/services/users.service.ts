@@ -9,7 +9,12 @@ export class UsersService {
 
   private arrUsers: User[] = USERS;
 
-  //getters y setters
+  //aquí tendre que crear metodos getters y setters
 
   constructor() { }
+
+
+  getAll(): User[] {
+    return this.arrUsers;
+  }
 }
