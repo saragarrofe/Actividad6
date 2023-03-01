@@ -1,0 +1,10 @@
+.px-3.py-2.rounded-2.border {
+    background-color: var(--bs-primary-bg-subtle);
+    --bs-border-color: var(--bs-primary-border-subtle);
+    color: var(--bs-primary-text);
+}
+
+.bd-indigo-500 {
+    color: #fff;
+    background-color: #6610f2;
+    }
