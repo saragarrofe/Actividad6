@@ -1,1 +1,36 @@
-<p>form works!</p>
+
+<section class="container">
+<form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+
+
+    <div class="my-2">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control" id="nombre" type="text" formControlName="nombre">
+    </div>
+
+    <div class="my-2">
+        <label class="form-label" for="apellidos">Apellidos</label>
+        <input class="form-control" id="apellidos" type="text" formControlName="apellidos">
+    </div>
+
+    <div class="my-2">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" id="email" type="text" formControlName="email">
+    </div>
+
+    <div class="my-2">
+        <label class="form-label" for="imagen">Imagen</label>
+        <input class="form-control" id="imagen" type="text" formControlName="imagen">
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-dark">
+</form>
+
+</section>
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@ import { User } from 'src/app/interfaces/user.interface';
 })
 export class UserComponent implements OnInit{
 
-  @Input() miUsuario: User | any;
+  @Input() miUsuario!: User;
 
   ngOnInit() : void {
    // console.log(this.miUsuario)
