@@ -1,29 +1,35 @@
 
+{{ formModel.valid}}
+
 <section class="container">
 <form [formGroup]="formModel" (ngSubmit)="getDataForm()">
 
 
     <div class="my-2">
-        <label class="form-label" for="nombre">Nombre</label>
+        <label class="form-label" for="nombre">Nombre (*)</label>
         <input class="form-control" id="nombre" type="text" formControlName="nombre">
+        <p class="error" *ngIf="checkControl('nombre', 'required')">El campo es requerido</p>
     </div>
 
     <div class="my-2">
-        <label class="form-label" for="apellidos">Apellidos</label>
+        <label class="form-label" for="apellidos">Apellidos (*)</label>
         <input class="form-control" id="apellidos" type="text" formControlName="apellidos">
+        <p class="error" *ngIf="checkControl('apellidos', 'required')">El campo es requerido</p>
     </div>
 
     <div class="my-2">
-        <label class="form-label" for="email">Email</label>
+        <label class="form-label" for="email">Email (*)</label>
         <input class="form-control" id="email" type="text" formControlName="email">
+        <p class="error" *ngIf="checkControl('email', 'pattern')">El mail debe ser válido</p>
     </div>
 
     <div class="my-2">
-        <label class="form-label" for="imagen">Imagen</label>
+        <label class="form-label" for="imagen">Imagen (*)</label>
         <input class="form-control" id="imagen" type="text" formControlName="imagen">
+        <p class="error" *ngIf="checkControl('imagen', 'required')">El campo es requerido</p>
     </div>
 
-    <input type="submit" value="Enviar" class="btn btn-dark">
+    <input type="submit" value="Enviar" class="btn btn-dark" [disabled]="!formModel.valid">
 </form>
 
 </section>

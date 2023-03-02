@@ -9,6 +9,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListaUsersComponent } from './components/lista-users/lista-users.component';
 import { FormComponent } from './components/form/form.component';
 import { UserComponent } from './components/user/user.component';
+import { HomeComponent } from './components/home/home.component';
+import { C404Component } from './components/c404/c404.component';
+import { VistaUserComponent } from './components/vista-user/vista-user.component';
+
 
 
 @NgModule({
@@ -18,7 +22,10 @@ import { UserComponent } from './components/user/user.component';
     FooterComponent,
     ListaUsersComponent,
     FormComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent,
+    C404Component,
+    VistaUserComponent
   ],
   imports: [
     BrowserModule,

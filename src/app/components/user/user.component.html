@@ -4,8 +4,9 @@
     <img [src]="miUsuario.imagen" alt="" class="card-img-top rounded mx-auto d-block">
 
       <p class="card-text">{{miUsuario.nombre}} {{miUsuario.apellido}}</p>
-      <a href="#" class="card-link">Ver detalle</a>
-      <a href="#" class="card-link">Actualizar</a>
-      <a href="#" class="card-link">Borrar</a>
+
+      <button class="btn btn-dark m-1" [routerLink]="['/user', miUsuario.id]">Ver detalle</button>
+      <button class="btn btn-dark m-1" [routerLink]="[]">Actualizar</button>
+      <button class="btn btn-dark m-1" [routerLink]="[]">Borrar</button>
     </div>
   </div>

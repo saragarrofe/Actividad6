@@ -19,6 +19,10 @@ export class UsersService {
     return this.arrUsers;
   }
 
+  getById(pId: number) : User | any {
+    return this.arrUsers.find(users => users.id === pId)
+  } 
+
   insertUsuario(pUser : User): string {
 
     let existe = this.arrUsers.some(user => user.email === pUser.email)
