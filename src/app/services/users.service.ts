@@ -1,21 +1,34 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { id, USERS } from '../db/users.db';
-import { User } from '../interfaces/user.interface';
+import { lastValueFrom } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  private arrUsers: User[] = USERS;
+ 
+
+  baseUrl: string = 'https://peticiones.online/api/users'
+
+  constructor(private httpClient: HttpClient) { }
+
+
+  getAll(pPage: number = 1): Promise<any>{
+    return lastValueFrom( this.httpClient.get<any>(`${this.baseUrl}?page=${pPage}`))
+
+  }
+}
+/*
+import { id, USERS } from '../db/users.db';
+import { User } from '../interfaces/user.interface';
+
+ private arrUsers: User[] = USERS;
   private id: number = id;
 
-  //aquí tendre que crear metodos getters y setters
 
-  constructor() { }
-
-
-  getAll(): User[] {
+  User[] {
     return this.arrUsers;
   }
 
@@ -35,4 +48,4 @@ export class UsersService {
     }
     return'Usuario duplicado'
   }
-}
+  */

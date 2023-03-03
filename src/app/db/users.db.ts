@@ -1,4 +1,4 @@
-import { User } from "../interfaces/user.interface";
+/*import { User } from "../interfaces/user.interface";
 
 export let id = 5;
 export const USERS: User [] = [
@@ -33,4 +33,4 @@ export const USERS: User [] = [
     },
 
     
-];
+];*/
