@@ -1,20 +1,19 @@
 
-{{ formModel.valid}}
 
 <section class="container">
-<form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+<form  novalidate [formGroup]="formModel" (ngSubmit)="getDataForm()">
 
 
     <div class="my-2">
-        <label class="form-label" for="nombre">Nombre (*)</label>
-        <input class="form-control" id="nombre" type="text" formControlName="nombre">
-        <p class="error" *ngIf="checkControl('nombre', 'required')">El campo es requerido</p>
+        <label class="form-label" for="first_name">Nombre (*)</label>
+        <input class="form-control" id="first_name" type="text" formControlName="first_name">
+        <p class="error" *ngIf="checkControl('first_name', 'required')">El campo es requerido</p>
     </div>
 
     <div class="my-2">
-        <label class="form-label" for="apellidos">Apellidos (*)</label>
-        <input class="form-control" id="apellidos" type="text" formControlName="apellidos">
-        <p class="error" *ngIf="checkControl('apellidos', 'required')">El campo es requerido</p>
+        <label class="form-label" for="last_name">Apellidos (*)</label>
+        <input class="form-control" id="last_name" type="text" formControlName="last_name">
+        <p class="error" *ngIf="checkControl('last_name', 'required')">El campo es requerido</p>
     </div>
 
     <div class="my-2">
@@ -24,12 +23,12 @@
     </div>
 
     <div class="my-2">
-        <label class="form-label" for="imagen">Imagen (*)</label>
-        <input class="form-control" id="imagen" type="text" formControlName="imagen">
-        <p class="error" *ngIf="checkControl('imagen', 'required')">El campo es requerido</p>
+        <label class="form-label" for="image">Imagen (*)</label>
+        <input class="form-control" id="image" type="text" formControlName="image">
+        <p class="error" *ngIf="checkControl('image', 'required')">El campo es requerido</p>
     </div>
 
-    <input type="submit" value="Enviar" class="btn btn-dark" [disabled]="!formModel.valid">
+    <input type="submit" value="Guardar" class="btn btn-dark" [disabled]="!formModel.valid">
 </form>
 
 </section>

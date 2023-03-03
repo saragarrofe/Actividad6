@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/app/interfaces/user.interface';
+import { UsersService } from 'src/app/services/users.service';
 
 
 @Component({
@@ -11,13 +14,19 @@ export class FormComponent {
 
   formModel: FormGroup;
 
-  constructor() {
+  constructor(
+    
+    private usersService: UsersService,
+    private router: Router
+
+    ) {
+
     this.formModel = new FormGroup({
-      nombre: new FormControl("", [
+      first_name: new FormControl("", [
         Validators.required,
         Validators.minLength(3)
       ]),
-      apellidos: new FormControl("", [
+      last_name: new FormControl("", [
         Validators.required
       ]),
       email: new FormControl("", [
@@ -25,7 +34,7 @@ export class FormComponent {
         Validators.pattern(/^\S+\@\S+\.\S+/)
         // (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/) otro tipo de validador para el campo del mail
       ]),
-      imagen: new FormControl("", [
+      image: new FormControl("", [
         Validators.required
       ]),
 
@@ -33,8 +42,18 @@ export class FormComponent {
     },[])
   }
 
-  getDataForm(){
-    console.log(this.formModel.value)
+  async getDataForm(){
+    try {
+      let user: User = this.formModel.value;
+      let response = await this.usersService.create(user);
+      if (response.id){
+        alert(`usuario ${response.first_name} con id ${response.id} se ha creado correctamente`);
+        this.router.navigate(['/home']);
+    }
+  }
+  catch(err) {
+    console.log(err)
+  }
 
   }
 

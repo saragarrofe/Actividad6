@@ -13,7 +13,7 @@ import { UsersService } from 'src/app/services/users.service';
 
 export class VistaUserComponent implements OnInit{
 
-  user!: User;
+  user!: User | any;
 
 
   constructor(
@@ -23,7 +23,15 @@ export class VistaUserComponent implements OnInit{
     
     ){}
 
-    ngOnInit(): void{}
+    ngOnInit(): void{
+
+      this.activatedRoute.params.subscribe(async (params: any) => {
+        let id: number = parseInt(params.userid)
+        let response: any = await this.usersService.getById(id);
+        this.user = response.data;
+      })
+
+    }
 
 
 }

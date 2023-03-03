@@ -1,1 +1,17 @@
-<p>Soy Vista de usuario</p>
+<section class="container mt-3">
+<div class="card p-3">
+
+    <figure>
+        <img ]src]="user?.image" alt="user?.first_name">
+    </figure>
+    <ul>
+        <li>{{user?.first_name}}</li>
+        <li>{{user?.last_name}}</li>
+        <li>{{user?.username}}</li>
+        <li>{{user?.email}}</li>
+    </ul>
+    <button class="btn btn-dark" [routerLink]="['/home']">Volver a usuarios</button>
+</div>
+
+
+</section>
