@@ -46,8 +46,8 @@ export class FormComponent {
     try {
       let user: User = this.formModel.value;
       let response = await this.usersService.create(user);
-      if (response.id){
-        alert(`usuario ${response.first_name} con id ${response.id} se ha creado correctamente`);
+      if (response._id){
+        alert(`usuario ${response.first_name} con id ${response._id} se ha creado correctamente`);
         this.router.navigate(['/home']);
     }
   }

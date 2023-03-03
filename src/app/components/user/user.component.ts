@@ -6,5 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent /*implements OnInit*/{
+export class UserComponent{
 }

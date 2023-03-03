@@ -26,9 +26,9 @@ export class VistaUserComponent implements OnInit{
     ngOnInit(): void{
 
       this.activatedRoute.params.subscribe(async (params: any) => {
-        let id: number = parseInt(params.userid)
+        let id: string = params._id;
         let response: any = await this.usersService.getById(id);
-        this.user = response.data;
+        this.user = response.results;
       })
 
     }

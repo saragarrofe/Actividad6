@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit{
   async ngOnInit(): Promise<void> {
     try{
       let response = await this.userService.getAll()
-      this.arrUsers = response.results 
+      this.arrUsers = response.results; 
       // console.log(this.arrUser)
     }
     catch (error){
