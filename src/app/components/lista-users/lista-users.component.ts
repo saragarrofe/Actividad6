@@ -15,7 +15,7 @@ export class ListaUsersComponent implements OnInit{
 
   }
 
-  ngOnInit(){
+  ngOnInit(): void {
     //necesitos llamar al servicio para traer un listado de usuarios
     this.arrUsers = this.usersService.getAll()
     console.log(this.arrUsers);

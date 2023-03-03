@@ -11,7 +11,7 @@ import { FormComponent } from './components/form/form.component';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { C404Component } from './components/c404/c404.component';
-import { VistaUserComponent } from './components/vista-user/vista-user.component';
+import { VistaUserComponent } from './components/user/vista-user/vista-user.component';
 
 
 

@@ -19,7 +19,7 @@ export class UsersService {
     return this.arrUsers;
   }
 
-  getById(pId: number) : User | any {
+  getById(pId: number) : User | undefined {
     return this.arrUsers.find(users => users.id === pId)
   } 
 

@@ -15,7 +15,7 @@ export class FormComponent {
     this.formModel = new FormGroup({
       nombre: new FormControl("", [
         Validators.required,
-        Validators.minLength(2)
+        Validators.minLength(3)
       ]),
       apellidos: new FormControl("", [
         Validators.required
