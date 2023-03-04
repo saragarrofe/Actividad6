@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -12,12 +12,15 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class FormComponent {
 
+  title: string = 'Registro'
+
   formModel: FormGroup;
 
   constructor(
     
     private usersService: UsersService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
 
     ) {
 
@@ -46,9 +49,11 @@ export class FormComponent {
     try {
       let user: User = this.formModel.value;
       let response = await this.usersService.create(user);
-      if (response._id){
-        alert(`usuario ${response.first_name} con id ${response._id} se ha creado correctamente`);
+      console.log('response', response)
+      if (response.id){
+        alert(`usuario ${response.first_name} con id ${response.id} se ha creado correctamente`);
         this.router.navigate(['/home']);
+   
     }
   }
   catch(err) {
@@ -64,6 +69,33 @@ export class FormComponent {
     return false
 
   }
+
+  ngOnInit(): void {
+    //debemos capturar la ruta activa.
+    this.activatedRoute.params.subscribe((params:any)=> {
+
+      let id: string = (params.id); 
+      if (id) {
+        this.title = 'Actualizar';
+
+      }
+   
+      console.log('params.id', params.id)
+    }) 
+  }
+
+  /*
+    this.activatedRoute.params.subscribe(async (params: any) => {
+      let id: string = (params.id)
+      console.log('id', id)
+
+      let response: any = await this.usersService.getById(id);
+      console.log('response', response)
+
+      this.user = response;
+
+
+  */
 
 
 
