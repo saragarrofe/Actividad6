@@ -13,8 +13,9 @@ import { UsersService } from 'src/app/services/users.service';
 export class FormComponent {
 
   title: string = 'Registro'
-
   formModel: FormGroup;
+  msg: string = "";
+  type: string = "";
 
   constructor(
     
@@ -50,15 +51,17 @@ export class FormComponent {
 
     if (user.id){
       let response = await this.usersService.update(user);
-      alert(`usuario ${response.first_name} con id ${response.id} se ha actualizado correctamente`);
-      this.router.navigate(['/home']);
+      this.msg = `usuario ${user.first_name} con id ${user.id} se ha actualizado correctamente`;
+      this.type = 'success';
+      // this.router.navigate(['/home']);
     }else {
       try {
         let response = await this.usersService.create(user);
         console.log('response', response)
         if (response.id){
-          alert(`usuario ${response.first_name} con id ${response.id} se ha creado correctamente`);
-          this.router.navigate(['/home']);
+          this.msg =`usuario ${user.first_name} con id ${response.id} se ha creado correctamente`;
+          this.type = 'success';
+          // this.router.navigate(['/home']);
           }
          }
        catch(err) {

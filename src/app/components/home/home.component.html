@@ -4,14 +4,15 @@
     <div class="row g-3">
         <article class="col-12 col-md-6 col-lg-4" *ngFor="let user of arrUsers">
             <app-user-card [miUser]="user"></app-user-card>
-
-            
-
-
-
-        
-
         </article>
+
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><button class="page-link" (click)="gotoPage(currentPage - 1)" [disabled]="currentPage === 1"> Previous</button></li>
+              <li class="page-item"><button class="page-link" (click)="gotoPage(currentPage + 1)" [disabled]="currentPage === totalPage">Next</button></li>
+            </ul>
+          </nav>
     </div>
 
 </section>

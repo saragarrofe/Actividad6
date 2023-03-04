@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { C404Component } from './components/c404/c404.component';
 import { UserCardComponent } from './components/home/user-card/user-card.component';
 import { UserViewComponent } from './components/home/user-view/user-view.component';
+import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
 
 
 
@@ -24,7 +25,8 @@ import { UserViewComponent } from './components/home/user-view/user-view.compone
     HomeComponent,
     C404Component,
     UserCardComponent,
-    UserViewComponent
+    UserViewComponent,
+    NotificacionesComponent
   ],
   imports: [
     BrowserModule,
