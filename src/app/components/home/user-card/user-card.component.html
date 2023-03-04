@@ -1,13 +1,17 @@
-<div class="card">
+<div class="card mb-5">
     <figure>
         <img class="imagen_style card-img-top" [src]="miUser.image" [alt]="miUser.first_name">
     </figure>
     <div class="card-body"> 
         <h3 class="card-title">{{miUser.first_name}}</h3>
         <div class="d-flex justify-content-between">
-            <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-primary">Ver detalle</button>
-            <button [routerLink]="['/updateuser', miUser._id]" class="btn btn-outline-warning">Actualizar</button>
-            <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-danger">Borrar</button>
+            <div>
+      
+                <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-primary"><i class="fa-regular fa-street-view pe-2"></i>Ver detalle</button>
+            </div>
+           
+            <button [routerLink]="['/updateuser', miUser._id]" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square pe-2"></i>Actualizar</button>
+            <button class="btn btn-outline-danger" (click)="delete(miUser._id)"><i class="fa-regular fa-trash pe-2"></i>Borrar</button>
     </div>
     </div>
 </div>
