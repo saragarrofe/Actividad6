@@ -1,15 +1,14 @@
-<div class="card shadow p-2">
-    <div class="d-flex justify-content-around">
-        <figure>
-            <img class="img-fluid" [src]="miUsuario.image" alt="miUsuario.first_name">
-        </figure>
-        <h3>{{miUsuario.first_name}} {{miUsuario.last_name}}</h3>
+<div class="card">
+    <figure>
+        <img class="imagen_style card-img-top" [src]="miUser.image" [alt]="miUser.first_name">
+    </figure>
+    <div class="card-body"> 
+        <h3 class="card-title">{{miUser.first_name}}</h3>
+        <div class="d-flex justify-content-between">
+            <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-primary">Ver detalle</button>
+            <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-warning">Actualizar</button>
+            <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-danger">Borrar</button>
     </div>
-
-    <div class="d-flex justify-content-between">
-        <button [routerLink]="['/user, miUsuario._id']" class="btn btn-dark">Ver detalle</button>
-        <button [routerLink]="['/update, miUsuario.id']" class="btn btn-danger">Actualizar</button>
-        <button [routerLink]="['/user, miUsuario.id']" class="btn btn-warning">Borrar</button>
     </div>
-   
 </div>
+

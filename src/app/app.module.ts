@@ -8,11 +8,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/form.component';
-import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { C404Component } from './components/c404/c404.component';
-import { VistaUserComponent } from './components/home/vista-user/vista-user.component';
 import { UserCardComponent } from './components/home/user-card/user-card.component';
+import { UserViewComponent } from './components/home/user-view/user-view.component';
 
 
 
@@ -22,11 +21,10 @@ import { UserCardComponent } from './components/home/user-card/user-card.compone
     HeaderComponent,
     FooterComponent,
     FormComponent,
-    UserComponent,
     HomeComponent,
     C404Component,
-    VistaUserComponent,
-    UserCardComponent
+    UserCardComponent,
+    UserViewComponent
   ],
   imports: [
     BrowserModule,

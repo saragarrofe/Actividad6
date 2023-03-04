@@ -20,7 +20,7 @@ export class UsersService {
   }
 
   getById(pId: string) : Promise<any> {
-    return lastValueFrom( this.httpClient.get<any>(`${this.baseUrl}${pId}`))
+    return lastValueFrom(this.httpClient.get<User>(`${this.baseUrl}${pId}`))
   }
 
   create(pUser: User): Promise <User>{
