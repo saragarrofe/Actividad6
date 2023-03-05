@@ -3,15 +3,15 @@
         <img class="imagen_style card-img-top" [src]="miUser.image" [alt]="miUser.first_name">
     </figure>
     <div class="card-body"> 
-        <h3 class="card-title">{{miUser.first_name}} {{miUser.last_name}}</h3>
+        <h3 class="card-text fs-5">{{miUser.first_name}} {{miUser.last_name}}</h3>
         <div class="d-flex justify-content-between">
             <div>
       
-                <button [routerLink]="['/user', miUser._id]" class="btn btn-outline-primary"><i class="fa-regular fa-street-view pe-2"></i>Ver detalle</button>
+                <button [routerLink]="['/user', miUser._id]" class="btn bd-detail-500"><i class="fa-regular fa-street-view pe-2"></i>Ver detalle</button>
             </div>
            
-            <button [routerLink]="['/updateuser', miUser._id]" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square pe-2"></i>Actualizar</button>
-            <button class="btn btn-outline-danger" (click)="delete(miUser._id)"><i class="fa-regular fa-trash pe-2"></i>Borrar</button>
+            <button [routerLink]="['/updateuser', miUser._id]" class="btn bd-update-500"><i class="fa-regular fa-pen-to-square pe-2"></i>Actualizar</button>
+            <button class="btn bd-delete-500" (click)="delete(miUser._id)"><i class="fa-regular fa-trash-can pe-2"></i>Borrar</button>
     </div>
     </div>
 </div>

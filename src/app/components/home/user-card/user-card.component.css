@@ -1,3 +1,18 @@
 .imagen_style {
     max-width: 100%;
 }
+
+.bd-detail-500 {
+    color: #4A481B;
+    background-color: #F5F082;
+}
+
+.bd-update-500 {
+    color: white;
+    background-color: #A171F0;
+}
+
+.bd-delete-500 {
+    color: white;
+    background-color: #F0A389;
+}
