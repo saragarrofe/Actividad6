@@ -28,10 +28,11 @@ export class FormComponent {
     this.formModel = new FormGroup({
       first_name: new FormControl("", [
         Validators.required,
-        Validators.minLength(3)
+        Validators.minLength(2)
       ]),
       last_name: new FormControl("", [
-        Validators.required
+        Validators.required,
+        Validators.minLength(2)
       ]),
       email: new FormControl("", [
         Validators.required,

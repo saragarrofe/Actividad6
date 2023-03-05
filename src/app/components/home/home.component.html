@@ -1,6 +1,9 @@
 
 <section class="container mt-2">
 
+  <h2>Listado de usuarios registrados</h2>
+  <hr>
+
     <div class="row g-3">
         <article class="col-12 col-md-6 col-lg-4" *ngFor="let user of arrUsers">
             <app-user-card [miUser]="user"></app-user-card>
